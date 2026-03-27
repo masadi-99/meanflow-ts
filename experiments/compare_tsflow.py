@@ -7,7 +7,8 @@ import torch
 import numpy as np
 from tqdm.auto import tqdm
 
-sys.path.insert(0, '/home/masadi/flow-matching-ts-research/TSFlow')
+TSFLOW_PATH = os.environ.get("TSFLOW_PATH", os.path.join(os.path.dirname(__file__), '..', '..', 'TSFlow'))
+sys.path.insert(0, TSFLOW_PATH)
 
 try:
     os.environ["TSFLOW_NO_KEOPS"] = "1"
@@ -44,7 +45,7 @@ model = TSFlowCond(
     use_lags=True, use_ema=True, num_steps=32, solver="euler", matching="random",
 ).to(device)
 
-ckpt_path = "/home/masadi/flow-matching-ts-research/TSFlow/logs/tsflow/20260325_213559/best_checkpoint.ckpt"
+ckpt_path = os.environ.get("TSFLOW_CKPT", os.path.join(TSFLOW_PATH, "logs/tsflow/20260325_213559/best_checkpoint.ckpt"))
 state = torch.load(ckpt_path, map_location=device, weights_only=False)
 model.load_state_dict(state, strict=True)
 model.eval()

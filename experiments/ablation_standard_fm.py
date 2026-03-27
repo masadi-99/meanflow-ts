@@ -38,7 +38,7 @@ logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=lo
 logger = logging.getLogger(__name__)
 
 sys.path.insert(0, os.path.dirname(__file__))
-from electricity_v2 import ConditionalMeanFlowNet, MeanFlowForecaster
+from meanflow_ts.model import ConditionalMeanFlowNet, MeanFlowForecaster
 
 # ============================================================
 # Standard FM loss — NO JVP, h=0 always
@@ -89,21 +89,24 @@ class FMForecaster(nn.Module):
 
         all_preds = []
         for _ in range(self.num_samples):
+            # Start from noise (t=1), integrate backward to data (t=0)
+            # v = e - x points from data toward noise
+            # So to go noise→data: z = z - dt * v
             z = torch.randn(B, self.prediction_length, device=device)
             dt = 1.0 / self.num_steps
             for step in range(self.num_steps):
-                t_val = step * dt
+                t_val = 1.0 - step * dt  # t goes from 1 → 0
                 t_tensor = torch.full((B,), t_val, device=device)
-                h_tensor = torch.zeros(B, device=device)  # h=0 for standard FM
+                h_tensor = torch.zeros(B, device=device)
                 v = self.net(z, (t_tensor, h_tensor), scaled_ctx)
-                z = z + dt * v
+                z = z - dt * v  # subtract: move toward data
             pred = z * loc
             all_preds.append(pred)
         return torch.stack(all_preds, dim=1)
 
 
 class FM1StepForecaster(nn.Module):
-    """Standard FM with 1-step (unfair but shows what happens)."""
+    """Standard FM with 1-step."""
     def __init__(self, net, context_length, prediction_length, num_samples=100):
         super().__init__()
         self.net = net
@@ -120,11 +123,12 @@ class FM1StepForecaster(nn.Module):
 
         all_preds = []
         for _ in range(self.num_samples):
+            # Start at noise (t=1), one step toward data (t=0)
             z = torch.randn(B, self.prediction_length, device=device)
-            t_tensor = torch.zeros(B, device=device)  # t=0
+            t_tensor = torch.ones(B, device=device)   # t=1 (noise)
             h_tensor = torch.zeros(B, device=device)
             v = self.net(z, (t_tensor, h_tensor), scaled_ctx)
-            pred = (z + v) * loc  # one Euler step from t=0 to t=1
+            pred = (z - v) * loc  # z_0 = z_1 - v
             all_preds.append(pred)
         return torch.stack(all_preds, dim=1)
 

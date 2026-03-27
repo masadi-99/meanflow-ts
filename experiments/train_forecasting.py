@@ -30,7 +30,7 @@ except:
     pass
 
 sys.path.insert(0, os.path.dirname(__file__))
-from electricity_v2 import ConditionalMeanFlowNet, conditional_meanflow_loss, MeanFlowForecaster
+from meanflow_ts.model import ConditionalMeanFlowNet, conditional_meanflow_loss, MeanFlowForecaster
 
 CONFIGS = {
     "solar_nips":          {"freq": "H", "ctx": 24, "pred": 24},

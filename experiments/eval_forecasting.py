@@ -22,7 +22,7 @@ try:
 except: pass
 
 sys.path.insert(0, os.path.dirname(__file__))
-from electricity_v2 import ConditionalMeanFlowNet, MeanFlowForecaster
+from meanflow_ts.model import ConditionalMeanFlowNet, MeanFlowForecaster
 
 DATASETS = {
     "electricity_nips": {"freq": "H", "ctx": 24, "pred": 24, "ckpt": "best_cond_meanflow.pt"},

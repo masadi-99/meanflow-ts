@@ -13,7 +13,7 @@ import torch.nn.functional as F
 from copy import deepcopy
 
 sys.path.insert(0, os.path.dirname(__file__))
-from electricity_v2 import (
+from meanflow_ts.model import (
     ConditionalMeanFlowNet, conditional_meanflow_loss, sample_t_r,
     MeanFlowForecaster, SinusoidalPosEmb
 )

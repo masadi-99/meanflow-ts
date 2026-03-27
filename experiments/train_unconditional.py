@@ -86,21 +86,26 @@ def main():
 
     optimizer = AdamW(net.parameters(), lr=6e-4)
     batch_size = 256
+    batches_per_epoch = 128  # Match TSFlow's training intensity
 
     for epoch in range(args.epochs):
         net.train()
-        idx = torch.randint(0, len(train_tensor), (batch_size,))
-        x = train_tensor[idx]
+        epoch_loss = 0
+        for _ in range(batches_per_epoch):
+            idx = torch.randint(0, len(train_tensor), (batch_size,))
+            x = train_tensor[idx]
 
-        loss = unconditional_meanflow_loss(net, x)
-        optimizer.zero_grad()
-        loss.backward()
-        torch.nn.utils.clip_grad_norm_(net.parameters(), 1.0)
-        optimizer.step()
+            loss = unconditional_meanflow_loss(net, x)
+            optimizer.zero_grad()
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(net.parameters(), 1.0)
+            optimizer.step()
 
-        with torch.no_grad():
-            for p, pe in zip(net.parameters(), net_ema.parameters()):
-                pe.data.lerp_(p.data, 1e-4)
+            with torch.no_grad():
+                for p, pe in zip(net.parameters(), net_ema.parameters()):
+                    pe.data.lerp_(p.data, 1e-4)
+            epoch_loss += loss.item()
+        epoch_loss /= batches_per_epoch
 
         if (epoch + 1) % 100 == 0 or epoch == 0:
             # Generate samples and compute basic stats
@@ -108,7 +113,7 @@ def main():
             samples = meanflow_sample(net_ema, (512, seq_len), device)
             s_mean, s_std = samples.mean().item(), samples.std().item()
             r_mean, r_std = train_tensor.mean().item(), train_tensor.std().item()
-            logger.info(f"Epoch {epoch+1:>4} | Loss: {loss.item():.4f} | "
+            logger.info(f"Epoch {epoch+1:>4} | Loss: {epoch_loss:.4f} | "
                         f"Gen: mean={s_mean:.3f} std={s_std:.3f} | "
                         f"Real: mean={r_mean:.3f} std={r_std:.3f}")
 

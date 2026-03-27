@@ -43,11 +43,15 @@ CONFIGS = {
     "traffic_nips":       {"freq": "H", "ctx": 24, "pred": 24},
     "exchange_rate_nips": {"freq": "B", "ctx": 30, "pred": 30},
     "m4_hourly":          {"freq": "H", "ctx": 48, "pred": 48},
+    "uber_tlc_hourly":    {"freq": "H", "ctx": 24, "pred": 24},
+    "wiki2000_nips":      {"freq": "1D", "ctx": 30, "pred": 30},
+    "kdd_cup_2018_without_missing": {"freq": "H", "ctx": 48, "pred": 48},
 }
-LAG_MAP = {"H": 672, "B": 750}
+LAG_MAP = {"H": 672, "B": 750, "1D": 750}
 TSFLOW_CRPS = {
     "electricity_nips": 0.045, "solar_nips": 0.341,
     "traffic_nips": 0.082, "exchange_rate_nips": 0.005, "m4_hourly": 0.029,
+    "uber_tlc_hourly": 0.154, "wiki2000_nips": 0.207, "kdd_cup_2018_without_missing": 0.288,
 }
 
 

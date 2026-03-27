@@ -103,6 +103,8 @@ def extract_lag_features(past_target, ctx_len, freq="H", n_lags=7):
         lag_offsets = [24 * (i + 1) for i in range(n_lags)]  # 24, 48, 72, ...
     elif freq == "B":
         lag_offsets = [5 * (i + 1) for i in range(n_lags)]   # 5, 10, 15, ...
+    elif freq in ("D", "1D"):
+        lag_offsets = [7 * (i + 1) for i in range(n_lags)]   # 7, 14, 21, ... (weekly)
     else:
         lag_offsets = [24 * (i + 1) for i in range(n_lags)]   # default hourly
 

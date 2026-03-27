@@ -85,8 +85,8 @@ def main():
     logger.info(f"Params: {sum(p.numel() for p in net.parameters()):,}")
 
     optimizer = AdamW(net.parameters(), lr=6e-4)
-    batch_size = 256
-    batches_per_epoch = 128  # Match TSFlow's training intensity
+    batch_size = 16384  # ~32GB GPU, run 1 dataset at a time
+    batches_per_epoch = 8   # 8 * 16384 = 131K samples/epoch, 8 gradient steps
 
     for epoch in range(args.epochs):
         net.train()

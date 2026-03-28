@@ -62,6 +62,8 @@ def main():
     parser.add_argument("--epochs", type=int, default=600)
     parser.add_argument("--n-lags", type=int, default=7)
     parser.add_argument("--lambda-temporal", type=float, default=0.1)
+    parser.add_argument("--batch-size", type=int, default=64)
+    parser.add_argument("--batches-per-epoch", type=int, default=128)
     args = parser.parse_args()
 
     name = args.dataset
@@ -92,8 +94,8 @@ def main():
     )
     transformed_data = transformation.apply(dataset.train, is_train=True)
     train_loader = TrainDataLoader(
-        Cached(transformed_data), batch_size=64, stack_fn=batchify,
-        transform=train_splitter, num_batches_per_epoch=128, shuffle_buffer_length=10000,
+        Cached(transformed_data), batch_size=args.batch_size, stack_fn=batchify,
+        transform=train_splitter, num_batches_per_epoch=args.batches_per_epoch, shuffle_buffer_length=10000,
     )
 
     net = ConditionalMeanFlowNetV2(

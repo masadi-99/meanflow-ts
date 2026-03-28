@@ -1,0 +1,109 @@
+2026-03-28 00:05:45,621 [INFO] 
+============================================================
+2026-03-28 00:05:45,621 [INFO] RUNNING VARIANT: flat-loss
+2026-03-28 00:05:45,621 [INFO] ============================================================
+2026-03-28 00:05:45,628 [INFO] using dataset already processed in path /home/masadi/.gluonts/datasets/electricity_nips.
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/time_feature/_base.py:249: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  offset = to_offset(freq_str)
+2026-03-28 00:05:47,486 [INFO] [flat-loss] Params: 848,667 | levels=2 | lr=0.0006
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+2026-03-28 00:15:10,407 [INFO] [flat-loss] Epoch 20/100 | Loss: 1.1690 | 25.1s
+2026-03-28 00:24:06,109 [INFO] [flat-loss] Epoch 40/100 | Loss: 1.1272 | 33.5s
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:01<1:11:17,  1.65s/it]Eval:  20%|█▉        | 513/2590 [00:03<00:11, 179.98it/s]Eval:  40%|███▉      | 1025/2590 [00:05<00:06, 232.29it/s]Eval:  59%|█████▉    | 1537/2590 [00:06<00:04, 263.25it/s]Eval:  79%|███████▉  | 2049/2590 [00:08<00:01, 275.98it/s]Eval:  99%|█████████▉| 2561/2590 [00:08<00:00, 397.68it/s]                                                          Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2590it [00:09, 281.20it/s]
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py:133: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-03-28 00:29:03,858 [INFO] [flat-loss] Epoch 50 → CRPS=0.389840 | ND=0.477474 | Best=0.389840
+2026-03-28 00:33:29,556 [INFO] [flat-loss] Epoch 60/100 | Loss: 1.1167 | 27.2s
+2026-03-28 00:42:27,589 [INFO] [flat-loss] Epoch 80/100 | Loss: 1.1887 | 27.9s
+2026-03-28 00:51:40,818 [INFO] [flat-loss] Epoch 100/100 | Loss: 1.2688 | 27.6s
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:01<1:22:12,  1.91s/it]Eval:  20%|█▉        | 513/2590 [00:03<00:12, 161.96it/s]Eval:  40%|███▉      | 1025/2590 [00:05<00:07, 217.06it/s]Eval:  59%|█████▉    | 1537/2590 [00:07<00:04, 250.32it/s]Eval:  79%|███████▉  | 2049/2590 [00:08<00:02, 267.38it/s]Eval:  99%|█████████▉| 2561/2590 [00:09<00:00, 388.04it/s]                                                          Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2590it [00:08, 289.17it/s]
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py:133: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-03-28 00:52:13,462 [INFO] [flat-loss] Epoch 100 → CRPS=0.235456 | ND=0.285549 | Best=0.235456
+2026-03-28 00:52:13,466 [INFO] [flat-loss] FINAL BEST CRPS: 0.235456
+2026-03-28 00:52:13,467 [INFO] 
+============================================================
+2026-03-28 00:52:13,467 [INFO] RUNNING VARIANT: flat-loss+big-heads
+2026-03-28 00:52:13,467 [INFO] ============================================================
+2026-03-28 00:52:13,468 [INFO] using dataset already processed in path /home/masadi/.gluonts/datasets/electricity_nips.
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/time_feature/_base.py:249: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  offset = to_offset(freq_str)
+2026-03-28 00:52:14,899 [INFO] [flat-loss+big-heads] Params: 1,553,499 | levels=2 | lr=0.0006
+2026-03-28 01:02:03,927 [INFO] [flat-loss+big-heads] Epoch 20/100 | Loss: 1.2675 | 39.2s
+2026-03-28 01:10:58,844 [INFO] [flat-loss+big-heads] Epoch 40/100 | Loss: 1.3588 | 24.7s
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:01<1:16:48,  1.78s/it]Eval:  20%|█▉        | 513/2590 [00:03<00:12, 171.17it/s]Eval:  40%|███▉      | 1025/2590 [00:05<00:07, 222.14it/s]Eval:  59%|█████▉    | 1537/2590 [00:07<00:04, 244.75it/s]Eval:  79%|███████▉  | 2049/2590 [00:08<00:02, 263.18it/s]Eval:  99%|█████████▉| 2561/2590 [00:09<00:00, 384.07it/s]                                                          Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2590it [00:09, 287.68it/s]
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py:133: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-03-28 01:15:30,077 [INFO] [flat-loss+big-heads] Epoch 50 → CRPS=0.391590 | ND=0.474446 | Best=0.391590
+2026-03-28 01:20:10,609 [INFO] [flat-loss+big-heads] Epoch 60/100 | Loss: 1.2938 | 33.6s
+2026-03-28 01:29:08,792 [INFO] [flat-loss+big-heads] Epoch 80/100 | Loss: 1.1027 | 33.7s
+2026-03-28 01:37:31,523 [INFO] [flat-loss+big-heads] Epoch 100/100 | Loss: 1.0509 | 24.2s
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:01<1:23:00,  1.92s/it]Eval:  20%|█▉        | 513/2590 [00:03<00:13, 157.80it/s]Eval:  40%|███▉      | 1025/2590 [00:05<00:07, 208.46it/s]Eval:  59%|█████▉    | 1537/2590 [00:07<00:04, 231.68it/s]Eval:  79%|███████▉  | 2049/2590 [00:09<00:02, 244.44it/s]Eval:  99%|█████████▉| 2561/2590 [00:09<00:00, 356.09it/s]                                                          Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2590it [00:08, 304.16it/s]
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py:133: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-03-28 01:38:04,436 [INFO] [flat-loss+big-heads] Epoch 100 → CRPS=0.243181 | ND=0.289371 | Best=0.243181
+2026-03-28 01:38:04,440 [INFO] [flat-loss+big-heads] FINAL BEST CRPS: 0.243181
+2026-03-28 01:38:04,441 [INFO] 
+============================================================
+2026-03-28 01:38:04,441 [INFO] RUNNING VARIANT: baseline
+2026-03-28 01:38:04,441 [INFO] ============================================================
+2026-03-28 01:38:04,442 [INFO] using dataset already processed in path /home/masadi/.gluonts/datasets/electricity_nips.
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/time_feature/_base.py:249: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  offset = to_offset(freq_str)
+2026-03-28 01:38:05,832 [INFO] [baseline] Params: 1,139,929 | levels=N/A | lr=0.0006
+2026-03-28 01:46:06,795 [INFO] [baseline] Epoch 20/100 | Loss: 1.1607 | 26.1s
+2026-03-28 01:54:06,711 [INFO] [baseline] Epoch 40/100 | Loss: 1.1250 | 22.8s
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:01<1:16:25,  1.77s/it]Eval:  20%|█▉        | 513/2590 [00:03<00:11, 176.10it/s]Eval:  40%|███▉      | 1025/2590 [00:05<00:06, 231.91it/s]Eval:  59%|█████▉    | 1537/2590 [00:06<00:04, 255.33it/s]Eval:  79%|███████▉  | 2049/2590 [00:08<00:02, 270.00it/s]Eval:  99%|█████████▉| 2561/2590 [00:08<00:00, 399.54it/s]                                                          Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2590it [00:08, 302.19it/s]
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py:133: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-03-28 01:58:10,150 [INFO] [baseline] Epoch 50 → CRPS=0.371538 | ND=0.451186 | Best=0.371538
+2026-03-28 02:01:50,088 [INFO] [baseline] Epoch 60/100 | Loss: 1.0970 | 21.0s
+2026-03-28 02:09:51,869 [INFO] [baseline] Epoch 80/100 | Loss: 1.0862 | 29.2s
+2026-03-28 02:19:19,039 [INFO] [baseline] Epoch 100/100 | Loss: 1.1776 | 26.3s
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:01<1:26:14,  2.00s/it]Eval:  20%|█▉        | 513/2590 [00:03<00:13, 152.44it/s]Eval:  40%|███▉      | 1025/2590 [00:05<00:07, 204.27it/s]Eval:  59%|█████▉    | 1537/2590 [00:07<00:04, 224.13it/s]Eval:  79%|███████▉  | 2049/2590 [00:09<00:02, 233.99it/s]Eval:  99%|█████████▉| 2561/2590 [00:10<00:00, 351.23it/s]                                                          Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2590it [00:08, 300.56it/s]
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py:133: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-03-28 02:19:52,702 [INFO] [baseline] Epoch 100 → CRPS=0.208268 | ND=0.244885 | Best=0.208268
+2026-03-28 02:19:52,707 [INFO] [baseline] FINAL BEST CRPS: 0.208268
+2026-03-28 02:19:52,707 [INFO] 
+============================================================
+2026-03-28 02:19:52,708 [INFO] ITERATION RESULTS SUMMARY
+2026-03-28 02:19:52,708 [INFO] ============================================================
+2026-03-28 02:19:52,708 [INFO]   baseline                       CRPS: 0.208268 ← BEST
+2026-03-28 02:19:52,708 [INFO]   flat-loss                      CRPS: 0.235456
+2026-03-28 02:19:52,708 [INFO]   flat-loss+big-heads            CRPS: 0.243181
+2026-03-28 02:19:52,708 [INFO] 
+  Baseline CRPS: 0.208268
+2026-03-28 02:19:52,708 [INFO]   flat-loss: 13.1% worse than baseline
+2026-03-28 02:19:52,708 [INFO]   flat-loss+big-heads: 16.8% worse than baseline

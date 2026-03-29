@@ -1,0 +1,24 @@
+2026-03-28 17:44:01,654 [INFO] using dataset already processed in path /home/masadi/.gluonts/datasets/electricity_nips.
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/time_feature/_base.py:249: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  offset = to_offset(freq_str)
+2026-03-28 17:44:06,582 [INFO] [residual-only] Params: 1,184,241
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+2026-03-28 18:02:04,975 [INFO] [residual-only] Epoch 20/600 | Loss: 3.4231 | 47.6s
+2026-03-28 18:18:19,655 [INFO] [residual-only] Epoch 40/600 | Loss: 14104.4954 | 47.1s

@@ -1,0 +1,91 @@
+2026-03-28 16:30:11,750 [INFO] using dataset already processed in path /home/masadi/.gluonts/datasets/electricity_nips.
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/time_feature/_base.py:249: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  offset = to_offset(freq_str)
+2026-03-28 16:30:16,320 [INFO] [imf-only] Params: 1,139,929
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+2026-03-28 16:58:17,341 [INFO] [imf-only] Epoch 20/600 | Loss: 1.3377 | 120.6s
+2026-03-28 17:28:05,730 [INFO] [imf-only] Epoch 40/600 | Loss: 1.4279 | 97.9s
+2026-03-28 17:59:41,608 [INFO] [imf-only] Epoch 60/600 | Loss: 1.3088 | 81.1s
+2026-03-28 18:24:13,520 [INFO] [imf-only] Epoch 80/600 | Loss: 1.3109 | 73.4s
+2026-03-28 18:49:26,895 [INFO] [imf-only] Epoch 100/600 | Loss: 1.2490 | 85.1s
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/gluonts/dataset/common.py:263: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  return pd.Period(val, freq)
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:04<2:53:20,  4.02s/it]Eval:  20%|█▉        | 513/2590 [00:07<00:24, 85.12it/s]Eval:  40%|███▉      | 1025/2590 [00:10<00:13, 116.50it/s]Eval:  59%|█████▉    | 1537/2590 [00:13<00:07, 133.47it/s]Eval:  79%|███████▉  | 2049/2590 [00:16<00:03, 141.97it/s]Eval:  99%|█████████▉| 2561/2590 [00:17<00:00, 200.64it/s]                                                          Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2590it [00:09, 261.44it/s]
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py:133: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-03-28 18:50:09,995 [INFO] [imf-only] Epoch 100 -> CRPS=0.197752 | ND=0.224430 | Best=0.197752 | TSFlow=0.045
+2026-03-28 19:14:06,367 [INFO] [imf-only] Epoch 120/600 | Loss: 1.2794 | 63.5s
+2026-03-28 19:34:07,703 [INFO] [imf-only] Epoch 140/600 | Loss: 1.2707 | 59.8s
+2026-03-28 19:51:02,583 [INFO] [imf-only] Epoch 160/600 | Loss: 1.2078 | 44.9s
+2026-03-28 20:08:26,068 [INFO] [imf-only] Epoch 180/600 | Loss: 1.2832 | 51.4s
+2026-03-28 20:25:39,893 [INFO] [imf-only] Epoch 200/600 | Loss: 1.2767 | 50.6s
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:02<1:28:43,  2.06s/it]Eval:  20%|█▉        | 513/2590 [00:04<00:14, 144.54it/s]Eval:  40%|███▉      | 1025/2590 [00:06<00:08, 191.58it/s]Eval:  59%|█████▉    | 1537/2590 [00:08<00:04, 217.19it/s]Eval:  79%|███████▉  | 2049/2590 [00:10<00:02, 227.72it/s]Eval:  99%|█████████▉| 2561/2590 [00:10<00:00, 333.24it/s]                                                          Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2590it [00:08, 301.14it/s]
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py:133: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-03-28 20:26:13,981 [INFO] [imf-only] Epoch 200 -> CRPS=0.085523 | ND=0.095512 | Best=0.085523 | TSFlow=0.045
+2026-03-28 20:39:18,290 [INFO] [imf-only] Epoch 220/600 | Loss: 1.1959 | 37.9s
+2026-03-28 20:49:49,928 [INFO] [imf-only] Epoch 240/600 | Loss: 1.4044 | 37.2s
+2026-03-28 21:01:57,241 [INFO] [imf-only] Epoch 260/600 | Loss: 1.1915 | 40.6s
+2026-03-28 21:15:33,664 [INFO] [imf-only] Epoch 280/600 | Loss: 1.4638 | 35.5s
+2026-03-28 21:29:14,870 [INFO] [imf-only] Epoch 300/600 | Loss: 1.1902 | 31.8s
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:01<1:24:48,  1.97s/it]Eval:  20%|█▉        | 513/2590 [00:03<00:13, 151.77it/s]Eval:  40%|███▉      | 1025/2590 [00:05<00:07, 199.69it/s]Eval:  59%|█████▉    | 1537/2590 [00:07<00:04, 227.71it/s]Eval:  79%|███████▉  | 2049/2590 [00:09<00:02, 244.75it/s]Eval:  99%|█████████▉| 2561/2590 [00:09<00:00, 359.24it/s]                                                          Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2590it [00:08, 293.95it/s]
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py:133: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-03-28 21:29:48,838 [INFO] [imf-only] Epoch 300 -> CRPS=0.057290 | ND=0.064974 | Best=0.057290 | TSFlow=0.045
+2026-03-28 21:41:39,702 [INFO] [imf-only] Epoch 320/600 | Loss: 1.2218 | 36.5s
+2026-03-28 21:57:14,989 [INFO] [imf-only] Epoch 340/600 | Loss: 1.2628 | 61.7s
+2026-03-28 22:15:29,623 [INFO] [imf-only] Epoch 360/600 | Loss: 1.2856 | 51.2s
+2026-03-28 22:33:10,474 [INFO] [imf-only] Epoch 380/600 | Loss: 1.1816 | 46.6s
+2026-03-28 22:47:31,073 [INFO] [imf-only] Epoch 400/600 | Loss: 1.1765 | 31.0s
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:01<1:21:14,  1.88s/it]Eval:  20%|█▉        | 513/2590 [00:03<00:12, 159.89it/s]Eval:  40%|███▉      | 1025/2590 [00:05<00:07, 212.16it/s]Eval:  59%|█████▉    | 1537/2590 [00:07<00:04, 233.49it/s]Eval:  79%|███████▉  | 2049/2590 [00:09<00:02, 246.02it/s]Eval:  99%|█████████▉| 2561/2590 [00:09<00:00, 363.55it/s]                                                          Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2590it [00:08, 299.87it/s]
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py:133: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-03-28 22:48:04,573 [INFO] [imf-only] Epoch 400 -> CRPS=0.050885 | ND=0.057745 | Best=0.050885 | TSFlow=0.045
+2026-03-28 23:00:10,090 [INFO] [imf-only] Epoch 420/600 | Loss: 1.1826 | 24.6s
+2026-03-28 23:13:55,044 [INFO] [imf-only] Epoch 440/600 | Loss: 1.1936 | 55.8s
+2026-03-28 23:30:19,376 [INFO] [imf-only] Epoch 460/600 | Loss: 1.1624 | 47.5s
+2026-03-28 23:45:31,648 [INFO] [imf-only] Epoch 480/600 | Loss: 1.1726 | 56.7s
+2026-03-28 23:59:46,354 [INFO] [imf-only] Epoch 500/600 | Loss: 1.2078 | 33.6s
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:01<1:26:11,  2.00s/it]Eval:  20%|█▉        | 513/2590 [00:04<00:13, 149.32it/s]Eval:  40%|███▉      | 1025/2590 [00:06<00:07, 197.16it/s]Eval:  59%|█████▉    | 1537/2590 [00:08<00:04, 221.94it/s]Eval:  79%|███████▉  | 2049/2590 [00:09<00:02, 235.03it/s]Eval:  99%|█████████▉| 2561/2590 [00:10<00:00, 346.06it/s]                                                          Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2590it [00:08, 311.12it/s]
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py:133: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-03-29 00:00:19,686 [INFO] [imf-only] Epoch 500 -> CRPS=0.049710 | ND=0.056753 | Best=0.049710 | TSFlow=0.045
+2026-03-29 00:14:28,591 [INFO] [imf-only] Epoch 520/600 | Loss: 1.2665 | 28.8s
+2026-03-29 00:27:23,993 [INFO] [imf-only] Epoch 540/600 | Loss: 1.2530 | 56.0s
+2026-03-29 00:41:33,389 [INFO] [imf-only] Epoch 560/600 | Loss: 1.1861 | 48.4s
+2026-03-29 00:54:38,263 [INFO] [imf-only] Epoch 580/600 | Loss: 1.1783 | 48.1s
+2026-03-29 01:06:43,652 [INFO] [imf-only] Epoch 600/600 | Loss: 1.1986 | 19.5s
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:01<1:21:48,  1.90s/it]Eval:  20%|█▉        | 513/2590 [00:03<00:13, 158.46it/s]Eval:  40%|███▉      | 1025/2590 [00:05<00:07, 212.00it/s]Eval:  59%|█████▉    | 1537/2590 [00:07<00:04, 238.57it/s]Eval:  79%|███████▉  | 2049/2590 [00:09<00:02, 253.89it/s]Eval:  99%|█████████▉| 2561/2590 [00:09<00:00, 376.15it/s]                                                          Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2590it [00:08, 298.01it/s]
+/home/masadi/jupyter_venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py:133: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-03-29 01:07:17,246 [INFO] [imf-only] Epoch 600 -> CRPS=0.049362 | ND=0.056305 | Best=0.049362 | TSFlow=0.045
+2026-03-29 01:07:17,246 [INFO] [imf-only] FINAL Best CRPS: 0.049362

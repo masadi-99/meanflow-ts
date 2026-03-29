@@ -95,14 +95,30 @@ def dual_axis_meanflow_loss(net, future_clean, context_with_lags,
         adp_wt = (mf_loss.detach() + norm_eps) ** norm_p
         mf_loss = (mf_loss / adp_wt).mean()
 
-    # === Temporal-axis: Shift-equivariance loss ===
-    # v^{t+1}(z, s) should equal v^t(shift(z), s) for stationary series.
-    # Requires one additional forward pass on shifted input.
-    z_shifted = temporal_shift(z.detach(), direction=1)
-    h_vals = (t - r)
-    v_on_shifted = net(z_shifted, (t, h_vals), context_with_lags)
-    # u_pred[:, 1:] = v at positions 1..T-1
-    # v_on_shifted[:, :-1] = v at positions 0..T-2 on shifted input
-    te_loss = F.mse_loss(u_pred[:, 1:].detach(), v_on_shifted[:, :-1])
+    # === Temporal-axis: Spectral consistency loss ===
+    # The power spectrum of z_s - dt*v (one Euler step toward data) should be
+    # closer to the data's spectrum than z_s's spectrum.
+    # Specifically: after applying the velocity, the power should concentrate
+    # in low frequencies (matching data's spectral profile).
+    #
+    # This is a GLOBAL constraint that local convolutions can't enforce —
+    # it requires coordinating all temporal positions simultaneously.
+    #
+    # Computed from the already-available u_pred (NO extra forward pass).
+    #
+    # One-step denoised estimate: x_hat = z - (1-0)*u = z - u (at r=0)
+    # For general r: x_hat = z - (t-r)*u_pred
+    h_bcast = t_bc - r_bc
+    x_hat = (z - h_bcast * u_pred).detach()  # denoised estimate
+
+    # Power spectra
+    psd_xhat = torch.abs(torch.fft.rfft(x_hat, dim=1)) ** 2  # (B, freq_bins)
+    psd_target = torch.abs(torch.fft.rfft(future_clean, dim=1)) ** 2
+
+    # Log-spectral distance (scale-invariant, focuses on shape not magnitude)
+    te_loss = F.mse_loss(
+        torch.log(psd_xhat + 1e-8),
+        torch.log(psd_target + 1e-8).detach(),
+    )
 
     return mf_loss + lambda_temporal * te_loss, mf_loss.item(), te_loss.item()

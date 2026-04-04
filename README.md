@@ -4,17 +4,27 @@ First application of MeanFlow (Geng et al., 2025) to time series forecasting. Ac
 
 ## Results (Table 3 — CRPS, lower is better)
 
-| Method | NFE | Electricity | Exchange | Solar | Traffic | M4 (H) |
-|--------|-----|------------|----------|-------|---------|--------|
-| TSFlow (OU) | 32 | **0.045** | **0.005** | **0.341** | **0.082** | 0.029 |
-| **MeanFlow-TS** | **1** | 0.055 | 0.011 | 0.377 | 0.132 | **0.027** |
+v4 model with 7 daily lag features, 1.14M params, 1-step inference:
+
+| Dataset | MeanFlow-TS v4 (1 NFE) | TSFlow (32 NFE) | Gap |
+|---------|----------------------|-----------------|-----|
+| electricity | 0.047 | **0.045** | 4% |
+| solar | 0.423 | **0.341** | 24% |
+| traffic | 0.086 | **0.082** | 5% |
+| exchange | 0.010 | **0.005** | 100% |
+| m4_hourly | 0.032 | **0.029** | 10% |
+| uber_tlc | 0.159 | **0.154** | 3% |
+| wiki2000 | 0.208 | **0.207** | 0% |
+| kdd_cup | 0.293 | **0.288** | 2% |
+
+TSFlow is better on all datasets. MeanFlow-TS trades quality for 32x fewer inference steps.
 
 ## Known Limitations
 
-- **Normalization mismatch**: We normalize by context window mean; TSFlow uses global per-series means cached during training. This may account for part of the CRPS gap.
-- **No lag features**: TSFlow passes lagged values (same-hour from 1-28 days ago) as features. Our model only sees the immediate context window.
-- **No GP prior**: TSFlow initializes from a Gaussian Process posterior; we initialize from standard Gaussian noise.
-- **Simpler backbone**: 1D convolutions vs TSFlow's S4 (Structured State Space) blocks.
+- **Model size**: MeanFlow-TS has 1.14M params vs TSFlow's ~189K (6x larger)
+- **Normalization mismatch**: We normalize by context window mean; TSFlow uses global per-series means cached during training
+- **No GP prior**: TSFlow initializes from a Gaussian Process posterior; we use standard Gaussian noise
+- **Simpler backbone**: 1D convolutions vs TSFlow's S4 (Structured State Space) blocks
 
 ## Quick Start
 

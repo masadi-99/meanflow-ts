@@ -182,9 +182,16 @@ class MeanFlowForecasterV3(nn.Module):
             coarse_up = upsample(coarse_future / loc, coarse_r, self.prediction_length)
 
         # Scale stat vector if provided
+        # Stats [mean, max, min, std, argmax/L, area/L]:
+        # mean, max, min, std, area should be divided by loc (scale-dependent)
+        # argmax/L should NOT be divided (it's a position index in [0,1])
         stat_scaled = None
         if stat_vector is not None:
-            stat_scaled = stat_vector / loc.squeeze(1).unsqueeze(1)
+            scale = loc.squeeze(1).unsqueeze(1)  # (B, 1)
+            stat_scaled = stat_vector.clone()
+            stat_scaled[:, :4] = stat_vector[:, :4] / scale  # mean, max, min, std
+            # stat_scaled[:, 4] stays as-is (argmax, dimensionless)
+            stat_scaled[:, 5:] = stat_vector[:, 5:] / scale  # area/L
 
         all_preds = []
         for _ in range(self.num_samples):

@@ -1,13 +1,27 @@
 """
 Evaluate multi-resolution refinement and stat conditioning capabilities.
 
+NOTE: These are ORACLE/CEILING experiments. The coarse trajectory and statistics
+are derived from the ground-truth future. Results measure the model's ABILITY to
+condition, not realistic forecasting performance. In a real application, coarse
+trajectories would come from a coarser model's prediction, and statistics would
+be user-specified targets.
+
 Tests:
 1. Refinement: give oracle coarse future → does fine detail improve?
 2. Stat control: give oracle stats → does model hit them?
 3. Coarse consistency: downsample(generated) ≈ given coarse?
 4. Diversity under fixed conditioning
+
+IMPORTANT: CRPS values computed here use energy CRPS (unnormalized), NOT
+GluonTS mean_wQuantileLoss. These absolute values are NOT comparable to
+the normalized CRPS in Table 3. Only relative comparisons within this
+script (e.g., refinement vs unconditional) are valid.
 """
 import os, sys, torch, numpy as np, tempfile
+
+torch.manual_seed(6432)
+np.random.seed(6432)
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from meanflow_ts.model_v3 import ConditionalMeanFlowNetV3

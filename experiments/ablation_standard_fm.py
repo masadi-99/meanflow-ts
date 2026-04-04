@@ -37,7 +37,7 @@ except:
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-sys.path.insert(0, os.path.dirname(__file__))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from meanflow_ts.model import ConditionalMeanFlowNet, MeanFlowForecaster
 
 # ============================================================
@@ -84,7 +84,7 @@ class FMForecaster(nn.Module):
         device = past_target.device
         B = past_target.shape[0]
         context = past_target[:, -self.context_length:]
-        loc = context.abs().mean(dim=1, keepdim=True).clamp(min=1e-6)
+        loc = context.abs().mean(dim=1, keepdim=True).clamp(min=0.01)
         scaled_ctx = context / loc
 
         all_preds = []
@@ -118,7 +118,7 @@ class FM1StepForecaster(nn.Module):
         device = past_target.device
         B = past_target.shape[0]
         context = past_target[:, -self.context_length:]
-        loc = context.abs().mean(dim=1, keepdim=True).clamp(min=1e-6)
+        loc = context.abs().mean(dim=1, keepdim=True).clamp(min=0.01)
         scaled_ctx = context / loc
 
         all_preds = []
@@ -218,7 +218,7 @@ def main():
             past_target = batch["past_target"].to(device)
             future_target = batch["future_target"].to(device)
             context = past_target[:, -context_length:]
-            loc = context.abs().mean(dim=1, keepdim=True).clamp(min=1e-6)
+            loc = context.abs().mean(dim=1, keepdim=True).clamp(min=0.01)
             scaled_ctx = context / loc
             scaled_future = future_target / loc
 

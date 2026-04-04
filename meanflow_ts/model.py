@@ -274,7 +274,7 @@ class MeanFlowForecaster(nn.Module):
         device = past_target.device
         B = past_target.shape[0]
         context = past_target[:, -self.context_length:]
-        loc = context.abs().mean(dim=1, keepdim=True).clamp(min=1e-6)
+        loc = context.abs().mean(dim=1, keepdim=True).clamp(min=0.01)
         scaled_ctx = context / loc
 
         all_preds = []

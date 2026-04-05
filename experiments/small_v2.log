@@ -1,0 +1,83 @@
+/home/masadi/miniforge3/envs/tsflow/lib/python3.11/site-packages/gluonts/json.py:101: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+[KeOps] Compiling cuda jit compiler engine ... OK
+[pyKeOps] Compiling nvrtc binder for python ... OK
+[KeOps] /tmp/pykeops_build_95hbpiuv has been cleaned.
+[KeOps] Compiling cuda jit compiler engine ... OK
+[pyKeOps] Compiling nvrtc binder for python ... OK
+2026-04-04 13:57:06,840 - INFO - using dataset already processed in path /home/masadi/.gluonts/datasets/electricity_nips.
+2026-04-04 13:57:09,322 - INFO - === v2_small | 89,529 params (TSFlow: ~189K) ===
+2026-04-04 13:57:34,371 - INFO - Epoch   1/600 | Loss: 2.1003 | 25.0s
+2026-04-04 14:04:46,853 - INFO - Epoch  20/600 | Loss: 1.1394 | 31.0s
+2026-04-04 14:12:07,346 - INFO - Epoch  40/600 | Loss: 1.1602 | 25.5s
+2026-04-04 14:20:30,679 - INFO - Epoch  60/600 | Loss: 1.0980 | 25.0s
+2026-04-04 14:29:39,879 - INFO - Epoch  80/600 | Loss: 1.0681 | 30.2s
+2026-04-04 14:39:38,853 - INFO - Epoch 100/600 | Loss: 1.0921 | 23.4s
+2026-04-04 14:39:38,853 - INFO - Evaluating...
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:02<1:31:30,  2.12s/it]Eval:  20%|█▉        | 513/2590 [00:04<00:14, 140.61it/s]Eval:  40%|███▉      | 1025/2590 [00:06<00:08, 186.55it/s]Eval:  59%|█████▉    | 1537/2590 [00:08<00:05, 208.96it/s]Eval:  79%|███████▉  | 2049/2590 [00:10<00:02, 220.97it/s]Eval:  99%|█████████▉| 2561/2590 [00:10<00:00, 326.80it/s]Eval: 100%|██████████| 2590/2590 [00:10<00:00, 238.74it/s]
+Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2195it [00:10, 219.40it/s]Running evaluation: 2590it [00:11, 218.91it/s]
+/home/masadi/miniforge3/envs/tsflow/lib/python3.11/site-packages/pandas/core/dtypes/astype.py:134: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-04-04 14:40:21,889 - INFO -   CRPS=0.205646 ***BEST*** | Best: 0.205646
+2026-04-04 14:40:21,889 - INFO -   TSFlow: 0.045 | v4 (1.14M): 0.047
+2026-04-04 14:48:37,056 - INFO - Epoch 120/600 | Loss: 1.2098 | 21.6s
+2026-04-04 14:56:17,600 - INFO - Epoch 140/600 | Loss: 1.1179 | 22.1s
+2026-04-04 15:03:51,359 - INFO - Epoch 160/600 | Loss: 1.1030 | 20.4s
+2026-04-04 15:10:46,630 - INFO - Epoch 180/600 | Loss: 1.0778 | 17.2s
+2026-04-04 15:17:15,162 - INFO - Epoch 200/600 | Loss: 1.0880 | 21.1s
+2026-04-04 15:17:15,163 - INFO - Evaluating...
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:02<1:29:55,  2.08s/it]Eval:  20%|█▉        | 513/2590 [00:04<00:14, 142.85it/s]Eval:  40%|███▉      | 1025/2590 [00:06<00:08, 188.02it/s]Eval:  59%|█████▉    | 1537/2590 [00:08<00:05, 207.90it/s]Eval:  79%|███████▉  | 2049/2590 [00:10<00:02, 219.44it/s]Eval:  99%|█████████▉| 2561/2590 [00:10<00:00, 323.55it/s]Eval: 100%|██████████| 2590/2590 [00:10<00:00, 238.20it/s]
+Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2312it [00:10, 231.18it/s]Running evaluation: 2590it [00:11, 231.27it/s]
+/home/masadi/miniforge3/envs/tsflow/lib/python3.11/site-packages/pandas/core/dtypes/astype.py:134: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-04-04 15:17:57,270 - INFO -   CRPS=0.094221 ***BEST*** | Best: 0.094221
+2026-04-04 15:17:57,270 - INFO -   TSFlow: 0.045 | v4 (1.14M): 0.047
+2026-04-04 15:24:22,436 - INFO - Epoch 220/600 | Loss: 1.0608 | 19.5s
+2026-04-04 15:31:01,980 - INFO - Epoch 240/600 | Loss: 1.0761 | 19.3s
+2026-04-04 15:37:30,944 - INFO - Epoch 260/600 | Loss: 1.2408 | 18.6s
+2026-04-04 15:44:13,129 - INFO - Epoch 280/600 | Loss: 1.0806 | 18.9s
+2026-04-04 15:50:36,364 - INFO - Epoch 300/600 | Loss: 1.0557 | 16.5s
+2026-04-04 15:50:36,364 - INFO - Evaluating...
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:02<1:35:50,  2.22s/it]Eval:  20%|█▉        | 513/2590 [00:04<00:14, 141.50it/s]Eval:  40%|███▉      | 1025/2590 [00:06<00:08, 187.69it/s]Eval:  50%|████▉     | 1294/2590 [00:06<00:05, 245.26it/s]Eval:  59%|█████▉    | 1537/2590 [00:08<00:05, 185.78it/s]Eval:  79%|███████▉  | 2049/2590 [00:10<00:02, 208.39it/s]Eval:  99%|█████████▉| 2561/2590 [00:11<00:00, 323.75it/s]Eval: 100%|██████████| 2590/2590 [00:11<00:00, 231.33it/s]
+Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2282it [00:10, 228.14it/s]Running evaluation: 2590it [00:11, 228.28it/s]
+/home/masadi/miniforge3/envs/tsflow/lib/python3.11/site-packages/pandas/core/dtypes/astype.py:134: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-04-04 15:51:19,589 - INFO -   CRPS=0.058843 ***BEST*** | Best: 0.058843
+2026-04-04 15:51:19,590 - INFO -   TSFlow: 0.045 | v4 (1.14M): 0.047
+2026-04-04 15:58:02,171 - INFO - Epoch 320/600 | Loss: 1.0486 | 19.3s
+2026-04-04 16:04:55,473 - INFO - Epoch 340/600 | Loss: 1.1773 | 20.8s
+2026-04-04 16:12:09,407 - INFO - Epoch 360/600 | Loss: 1.0865 | 19.7s
+2026-04-04 16:20:44,848 - INFO - Epoch 380/600 | Loss: 1.0463 | 30.4s
+2026-04-04 16:30:13,148 - INFO - Epoch 400/600 | Loss: 1.0325 | 32.8s
+2026-04-04 16:30:13,149 - INFO - Evaluating...
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:02<1:31:06,  2.11s/it]Eval:  20%|█▉        | 513/2590 [00:04<00:14, 143.12it/s]Eval:  40%|███▉      | 1025/2590 [00:06<00:08, 187.54it/s]Eval:  59%|█████▉    | 1537/2590 [00:08<00:05, 195.83it/s]Eval:  79%|███████▉  | 2049/2590 [00:10<00:02, 211.89it/s]Eval:  99%|█████████▉| 2561/2590 [00:11<00:00, 316.38it/s]Eval: 100%|██████████| 2590/2590 [00:11<00:00, 232.37it/s]
+Running evaluation: 0it [00:00, ?it/s]Running evaluation: 1901it [00:10, 190.07it/s]Running evaluation: 2590it [00:14, 184.80it/s]
+/home/masadi/miniforge3/envs/tsflow/lib/python3.11/site-packages/pandas/core/dtypes/astype.py:134: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-04-04 16:30:59,815 - INFO -   CRPS=0.054204 ***BEST*** | Best: 0.054204
+2026-04-04 16:30:59,815 - INFO -   TSFlow: 0.045 | v4 (1.14M): 0.047
+2026-04-04 16:42:05,371 - INFO - Epoch 420/600 | Loss: 1.0998 | 38.2s
+2026-04-04 16:50:50,072 - INFO - Epoch 440/600 | Loss: 1.0440 | 19.8s
+2026-04-04 16:58:40,485 - INFO - Epoch 460/600 | Loss: 1.1110 | 26.4s
+2026-04-04 17:08:03,318 - INFO - Epoch 480/600 | Loss: 1.0207 | 27.8s
+2026-04-04 17:16:20,110 - INFO - Epoch 500/600 | Loss: 1.1743 | 19.5s
+2026-04-04 17:16:20,110 - INFO - Evaluating...
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:02<1:31:45,  2.13s/it]Eval:  20%|█▉        | 513/2590 [00:04<00:15, 138.39it/s]Eval:  40%|███▉      | 1025/2590 [00:06<00:08, 183.39it/s]Eval:  59%|█████▉    | 1537/2590 [00:08<00:05, 206.01it/s]Eval:  73%|███████▎  | 1883/2590 [00:08<00:02, 271.59it/s]Eval:  79%|███████▉  | 2049/2590 [00:11<00:02, 191.01it/s]Eval:  99%|█████████▉| 2561/2590 [00:11<00:00, 317.56it/s]Eval: 100%|██████████| 2590/2590 [00:11<00:00, 229.49it/s]
+Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2263it [00:10, 226.28it/s]Running evaluation: 2590it [00:11, 226.61it/s]
+/home/masadi/miniforge3/envs/tsflow/lib/python3.11/site-packages/pandas/core/dtypes/astype.py:134: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-04-04 17:17:03,620 - INFO -   CRPS=0.052212 ***BEST*** | Best: 0.052212
+2026-04-04 17:17:03,620 - INFO -   TSFlow: 0.045 | v4 (1.14M): 0.047
+2026-04-04 17:24:29,187 - INFO - Epoch 520/600 | Loss: 1.0351 | 24.8s
+2026-04-04 17:31:52,023 - INFO - Epoch 540/600 | Loss: 1.2863 | 21.5s
+2026-04-04 17:39:11,611 - INFO - Epoch 560/600 | Loss: 1.0179 | 25.2s
+2026-04-04 17:46:27,872 - INFO - Epoch 580/600 | Loss: 1.1062 | 21.9s
+2026-04-04 17:54:48,873 - INFO - Epoch 600/600 | Loss: 1.0753 | 21.9s
+2026-04-04 17:54:48,873 - INFO - Evaluating...
+Eval:   0%|          | 0/2590 [00:00<?, ?it/s]Eval:   0%|          | 1/2590 [00:02<1:28:20,  2.05s/it]Eval:  20%|█▉        | 513/2590 [00:04<00:14, 147.18it/s]Eval:  40%|███▉      | 1025/2590 [00:06<00:08, 193.20it/s]Eval:  59%|█████▉    | 1537/2590 [00:08<00:04, 215.40it/s]Eval:  79%|███████▉  | 2049/2590 [00:10<00:02, 206.09it/s]Eval:  99%|█████████▉| 2561/2590 [00:11<00:00, 310.25it/s]Eval: 100%|██████████| 2590/2590 [00:11<00:00, 234.60it/s]
+Running evaluation: 0it [00:00, ?it/s]Running evaluation: 2286it [00:10, 228.60it/s]Running evaluation: 2590it [00:11, 228.81it/s]
+/home/masadi/miniforge3/envs/tsflow/lib/python3.11/site-packages/pandas/core/dtypes/astype.py:134: UserWarning: Warning: converting a masked element to nan.
+  return arr.astype(dtype, copy=True)
+2026-04-04 17:55:32,049 - INFO -   CRPS=0.050911 ***BEST*** | Best: 0.050911
+2026-04-04 17:55:32,050 - INFO -   TSFlow: 0.045 | v4 (1.14M): 0.047
+2026-04-04 17:55:32,050 - INFO - DONE. Best CRPS: 0.050911 (89,529 params)

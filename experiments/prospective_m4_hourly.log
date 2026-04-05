@@ -1,0 +1,48 @@
+/home/masadi/miniforge3/envs/tsflow/lib/python3.11/site-packages/gluonts/json.py:101: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+[KeOps] Compiling cuda jit compiler engine ... OK
+[pyKeOps] Compiling nvrtc binder for python ... OK
+[KeOps] /tmp/pykeops_build_8ltp6t6_ has been cleaned.
+[KeOps] Compiling cuda jit compiler engine ... OK
+[pyKeOps] Compiling nvrtc binder for python ... OK
+Loaded best_v3_stats_m4_hourly.pt
+Computing training stat distributions (NO test/future info)...
+  Training windows: 7266
+  Training stat means: [1.    1.755 0.541 0.352 0.594 1.   ]
+  High peak threshold (90th pctile of training): 2.855
+  Low volatility threshold (10th pctile of training): 0.144
+
+================================================================================
+SCENARIO: high_peak — stat[1] above 2.855
+================================================================================
+  [50/200] cond_valid=14 rej@2K_valid=0
+  [100/200] cond_valid=15 rej@2K_valid=0
+  [150/200] cond_valid=14 rej@2K_valid=0
+  [200/200] cond_valid=17 rej@2K_valid=100
+
+  Method                    |  Valid/200 |      MAE |  ACF err |   Energy
+  ----------------------------------------------------------------------
+  cond blind                |       16.9 |   0.1396 |   0.3758 |   1.3124
+  Reject@ 200               |       10.1 |   0.3166 |   0.0730 |   2.5815
+  Reject@ 2000              |       99.8 |   0.2876 |   0.0725 |   2.2942
+  Reject@ 20000             |      996.1 |   0.2771 |   0.0688 |   2.0947
+
+================================================================================
+SCENARIO: low_volatility — stat[3] below 0.144
+================================================================================
+  [50/200] cond_valid=107 rej@2K_valid=403
+  [100/200] cond_valid=110 rej@2K_valid=439
+  [150/200] cond_valid=98 rej@2K_valid=381
+  [200/200] cond_valid=78 rej@2K_valid=304
+
+  Method                    |  Valid/200 |      MAE |  ACF err |   Energy
+  ----------------------------------------------------------------------
+  cond blind                |       78.1 |   0.0646 |   0.0719 |   0.4279
+  Reject@ 200               |       30.7 |   0.0341 |   0.0367 |   0.2324
+  Reject@ 2000              |      304.4 |   0.0353 |   0.0360 |   0.2270
+  Reject@ 20000             |     3049.7 |   0.0395 |   0.0392 |   0.2466
+
+  NOTE: ALL comparisons are FULLY PROSPECTIVE.
+  - Thresholds from TRAINING data only
+  - Conditioning uses TRAINING MEAN stats (not oracle)
+  - No future information used in scenario specification
